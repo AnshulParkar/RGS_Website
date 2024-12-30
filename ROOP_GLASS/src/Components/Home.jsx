@@ -1,11 +1,15 @@
-import { Typography } from '@mui/material'
-
+import './Home.css'; // Add a CSS file for styling
 function Home() {
   return (
-    <div>
-    
-    </div>
-  )
+    <>
+      <div className="hero-banner">
+        <div className="hero-overlay">
+          <h1 className="hero-title">Contractors and Engineers for Facade and Roofing Works</h1>
+          <button className="cta-button">Contact Us</button>
+        </div>
+      </div>
+    </>
+  );
 }
 
-export default Home
+export default Home;

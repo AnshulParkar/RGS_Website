@@ -1,0 +1,69 @@
+/* General Reset */
+body, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+  
+/* Header Styles */
+.navbar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 28, 61, 0.9); /* Navy with transparency for blur effect */
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    z-index: 1000;
+}
+  
+/* Logo Styles */
+.logo {
+    flex: 0 0 auto; /* Prevents the logo from stretching */
+}
+
+.logo-image {
+    width: 120px; /* Adjust the size of your logo */
+    height: auto;
+    display: block;
+}
+  
+/* Navbar Links */
+.nav-links {
+    flex: 1; /* Allows the nav links to take up remaining space */
+    display: flex;
+    justify-content: center; /* Centers the links */
+}
+
+.nav-links ul {
+    display: flex;
+    gap: 4.5rem;
+}
+
+.nav-links ul li {
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: #FFC857; /* Gold color for links */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-links ul li a:hover {
+    color: #F1FAEE; /* Soft white on hover */
+}
+
+/* Active Link Box */
+.nav-links ul li.active a {
+    border: 2px solid #FFC857; /* Gold border for active link */
+    color: #FFC857; /* Gold text */
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: transparent; /* No fill */
+}

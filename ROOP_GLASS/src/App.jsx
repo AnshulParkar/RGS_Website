@@ -1,24 +1,27 @@
-import { Routes, Route, Link } from 'react-router-dom'
-import { AppBar, Toolbar, Button, Container } from '@mui/material'
-import Home from './Components/Home'
-import './App.css'
+import React from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+import { AppBar, Toolbar, Button, Container } from '@mui/material';
+import Home from './Components/Home';
+import './App.css';
+import Header from './Components/Header';
+import OurServices from './Components/OurServices'; // Corrected import
 
 function App() {
   return (
     <>
-      <AppBar position="static">
-       {/*  <Toolbar>
-          <Button color="inherit" component={Link} to="/">Home</Button>
-          <Button color="inherit" component={Link} to="/about">About</Button>
-        </Toolbar> */}
-      </AppBar>
+      <Header />
       <Container>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={
+            <>
+              <Home />
+              <OurServices /> {/* Corrected component name */}
+            </>
+          } />
         </Routes>
       </Container>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
