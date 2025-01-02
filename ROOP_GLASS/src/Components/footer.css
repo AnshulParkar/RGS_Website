@@ -1,0 +1,18 @@
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.footer h1 {
+    font-size: 36px;
+    margin: 0;
+    color: #333;
+}
+
+.footer p {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #666;
+}

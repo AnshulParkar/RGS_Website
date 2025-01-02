@@ -5,6 +5,8 @@ import Home from './Components/Home';
 import './App.css';
 import Header from './Components/Header';
 import OurServices from './Components/OurServices'; // Corrected import
+import Footer from './Components/footer'; // Corrected import
+import CallbackOverlay from './Components/overlay';
 
 function App() {
   return (
@@ -14,8 +16,10 @@ function App() {
         <Routes>
           <Route path="/" element={
             <>
+              <CallbackOverlay />
               <Home />
               <OurServices /> {/* Corrected component name */}
+              <Footer /> {/* Corrected component name */}
             </>
           } />
         </Routes>
