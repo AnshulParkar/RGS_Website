@@ -1,36 +1,90 @@
 import React from 'react';
 import { Typography, Grid as MuiGrid, Container } from '@mui/material';
 import './OurServices.css';
+import AluminiumCladding from '../assets/Aluminium_Cladding.png';
+import CurtainWall from '../assets/CurtainWall.png';
+import DryStone from '../assets/DryStone_Cladding.png';
+import FramelessGlazing from '../assets/Frameless_Glazing.png';
+import GlassRoofing from '../assets/Glass_Roofing.png';
+import MetalRoofing from '../assets/Metal_Roofing.png';
+import MSSSFrameWorks from '../assets/MS&SSframeWorks.png';
+import PolycarbonateRoofing from '../assets/Polycarbonate_Roofing.png';
+import StructuralGlazing from '../assets/Structural_Glazing.png';
 
 const serviceData = [
-  { image: 'path/to/image1.jpg', title: 'Web Development', description: 'Custom website solutions for your business' },
-  { image: 'path/to/image2.jpg', title: 'Mobile Apps', description: 'Native and cross-platform mobile applications' },
-  { image: 'path/to/image3.jpg', title: 'Cloud Services', description: 'Scalable cloud infrastructure solutions' },
-  { image: 'path/to/image4.jpg', title: 'UI/UX Design', description: 'User-centered design and interfaces' },
-  { image: 'path/to/image5.jpg', title: 'Consulting', description: 'Technical consulting and strategy' },
-  { image: 'path/to/image6.jpg', title: 'Support', description: '24/7 technical support and maintenance' },
-  { image: 'path/to/image7.jpg', title: 'SEO Optimization', description: 'Improve your site’s visibility and ranking' },
-  { image: 'path/to/image8.jpg', title: 'E-commerce Solutions', description: 'Create and manage online stores' },
-  { image: 'path/to/image9.jpg', title: 'Digital Marketing', description: 'Increase your reach and brand awareness' },
+  {
+    image: StructuralGlazing,
+    title: 'Structural Glazing',
+    description: 'Advanced structural glazing for modern architectural projects'
+  },
+  {
+    image: AluminiumCladding,
+    title: 'Aluminium Cladding',
+    description: 'Premium aluminum cladding solutions for modern architectural designs'
+  },
+  {
+    image: FramelessGlazing,
+    title: 'Frameless Glazing',
+    description: 'Sleek frameless glazing systems for contemporary spaces'
+  },
+  {
+    image: PolycarbonateRoofing,
+    title: 'Polycarbonate Roofing',
+    description: 'Lightweight and versatile polycarbonate roofing systems'
+  },
+  {
+    image: GlassRoofing,
+    title: 'Glass Roofing',
+    description: 'Innovative glass roofing solutions for natural lighting'
+  },
+  {
+    image: MetalRoofing,
+    title: 'Metal Roofing',
+    description: 'Durable and aesthetic metal roofing systems'
+  },
+  {
+    image: DryStone,
+    title: 'Dry Stone Cladding',
+    description: 'Natural stone cladding solutions for authentic and durable facades'
+  },
+  {
+    image: MSSSFrameWorks,
+    title: 'MS & SS Frame Works',
+    description: 'Custom mild steel and stainless steel framework solutions'
+  },
+  {
+    image: CurtainWall,
+    title: 'Curtain Wall System',
+    description: 'Elegant curtain wall systems for commercial and residential buildings'
+  }
 ];
 
 const OurServices = () => {
   return (
     <div className="services-section">
-      <Container>
-        <Typography variant="h2" component="h2" className="services-title">
+      <Container maxWidth="xl">
+        <Typography 
+          variant="h2" 
+          component="h2" 
+          className="services-title"
+          sx={{ fontFamily: '"Playfair Display", serif' }}
+        >
           Our Services
         </Typography>
-        <MuiGrid container spacing={4}>
+        <MuiGrid container spacing={8}>
           {serviceData.map((service, index) => (
             <MuiGrid item xs={12} sm={6} md={4} key={index}>
               <div className="service-box">
-                <img src={service.image} alt={service.title} className="service-image" />
-                <Typography variant="h5" component="h3" className="service-title">
+                <div className="image-container">
+                  <img src={service.image} alt={service.title} className="service-image" />
+                </div>
+                <Typography 
+                  variant="h6" 
+                  component="h3" 
+                  align="center" 
+                  className="service-title"
+                >
                   {service.title}
-                </Typography>
-                <Typography variant="body1" className="service-description">
-                  {service.description}
                 </Typography>
               </div>
             </MuiGrid>

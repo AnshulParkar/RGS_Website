@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 .hero-banner {
     width: 99.45vw; /* Use viewport width instead of % */
-    height: 90vh;
+    height: 100vh;
     margin: 0; /* Remove any default margins */
     padding: 0; /* Remove padding that might cause overflow */
     position: relative;

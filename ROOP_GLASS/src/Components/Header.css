@@ -9,7 +9,7 @@ body, ul, li, a {
   
 /* Header Styles */
 .navbar {
-    /* position: fixed; */
+    position: fixed;
     top: 0;
     display: flex;
     align-items: center;
@@ -18,8 +18,8 @@ body, ul, li, a {
     background-color: rgba(0, 28, 61, 0.9); /* Navy with transparency for blur effect */
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    padding: 1rem 1rem;
     z-index: 1000;
+    padding: 15px 0px;
 }
   
 /* Logo Styles */
