@@ -7,6 +7,7 @@ import Header from './Components/Header';
 import OurServices from './Components/OurServices'; // Corrected import
 import Footer from './Components/footer'; // Corrected import
 import CallbackOverlay from './Components/overlay';
+import Projects from './Components/Projects';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               <CallbackOverlay />
               <Home />
               <OurServices /> {/* Corrected component name */}
+              <Projects/>
               <Footer /> {/* Corrected component name */}
             </>
           } />

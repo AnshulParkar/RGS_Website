@@ -1,18 +1,96 @@
-.footer {
-    background-color: #f8f9fa;
-    padding: 20px;
+/* Container styles */
+.contactContainer {
+    background-color: #0F0E14;
+    width: 99.45vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 1rem 0;
+}
+
+.innerContainer {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+}
+  
+/* Header styles */
+.header {
+    color: white;
+    font-size: 3rem; /* Increased font size */
     text-align: center;
-    font-family: Arial, sans-serif;
+    margin-bottom: 3rem;
+    font-family: serif;
 }
-
-.footer h1 {
-    font-size: 36px;
-    margin: 0;
-    color: #333;
+  
+/* Contact info container */
+.contentWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
 }
+  
+/* Contact information section */
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 2.3rem; /* Increased gap for better spacing */
+}
+  
+.contactItem {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Increased gap for icons and text */
+}
+  
+.icon {
+    color: white;
+    width: 2.5rem; /* Increased icon size */
+    height: 2.5rem;
+}
+  
+.contactText {
+    color: white;
+    font-size: 1.5rem; /* Increased font size */
+}
+  
+/* Business card section */
+.cardContainer {
+    width: 100%;
+}
+  
 
-.footer p {
-    font-size: 18px;
-    margin: 5px 0;
-    color: #666;
+.cardImage {
+    width: 120%; /* Increased width for larger images */
+    max-width: 33rem; /* Set a maximum width for responsiveness */
+    height: auto;
+}
+  
+/* Media query for responsive design */
+@media (min-width: 768px) {
+    .contentWrapper {
+        flex-direction: row;
+    }
+  
+    .cardContainer {
+        width: 28rem; /* Increased width for larger cards */
+    }
+}
+  
+/* Optional hover effects */
+.contactItem:hover .icon {
+    transform: scale(1.2); /* Slightly larger hover effect */
+    transition: transform 0.2s ease;
+}
+  
+.card:hover {
+    transform: translateY(-3px); /* Enhanced hover effect */
+    transition: transform 0.2s ease;
+    box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.15), 
+                0 15px 15px -5px rgba(0, 0, 0, 0.1);
 }
