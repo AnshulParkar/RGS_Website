@@ -8,6 +8,7 @@ import OurServices from './Components/OurServices'; // Corrected import
 import Footer from './Components/footer'; // Corrected import
 import CallbackOverlay from './Components/overlay';
 import Projects from './Components/Projects';
+import DocumentCarousel from './Components/DocumentCarousel';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               <Home />
               <OurServices /> {/* Corrected component name */}
               <Projects/>
+              <DocumentCarousel/>
               <Footer /> {/* Corrected component name */}
             </>
           } />
