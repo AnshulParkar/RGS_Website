@@ -11,6 +11,9 @@ const Header = () => {
       <div className="logo" onClick={reloadPage} style={{ cursor: 'pointer' }}>
         <img src={logo} alt="Logo" className="logo-image" />
       </div>
+      <div className="Cname">
+        <h1>Roop Glass Solutions</h1>
+      </div>
       <nav className="nav-links">
         <ul>
           <li className="active">
