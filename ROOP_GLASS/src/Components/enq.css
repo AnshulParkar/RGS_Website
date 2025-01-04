@@ -1,0 +1,59 @@
+.enquiry{
+    /* position: relative; */
+  background-image: url('../assets/bannerENQ.png'); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  height: 270px; /* Adjust height as needed */
+  width: 100vw;
+    margin: 0; /* Remove any default margins */
+    padding: 0; /* Remove padding that might cause overflow */
+    position: relative;
+    left: 50%; /* Center the banner */
+    right: 50%;
+    margin-left: -50vw; /* Negative margin to counteract the left position */
+    margin-right: -50vw; /* Negative margin to counteract the right position */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.content{
+    text-align: center;
+  color: #0b0a0a;
+  /* background: rgba(0, 0, 0, 0.4); Add slight overlay for text clarity */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.enq-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .enq-subtitle {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  
+  .enq-button {
+    margin-top: 20px;
+    background-color: #0ed8d8; /* Teal color */
+    color: #000000; /* Black text */
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .enq-button:hover {
+    background-color: #00bcbc;
+  }

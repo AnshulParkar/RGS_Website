@@ -9,6 +9,7 @@ import Footer from './Components/footer'; // Corrected import
 import CallbackOverlay from './Components/overlay';
 import Projects from './Components/Projects';
 import DocumentCarousel from './Components/DocumentCarousel';
+import ENQ  from './Components/enq'; // Corrected import
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               <OurServices /> {/* Corrected component name */}
               <Projects/>
               <DocumentCarousel/>
+              <ENQ /> {/* Corrected component name */}
               <Footer /> {/* Corrected component name */}
             </>
           } />
