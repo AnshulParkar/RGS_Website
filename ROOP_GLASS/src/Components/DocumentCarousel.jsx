@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { Typography, Grid as MuiGrid, Container } from '@mui/material';
 import './DocumentCarousel.css';
 import certificate1 from '../assets/certificates/certificate1.png';
 import certificate2 from '../assets/certificates/certificate2.png';
@@ -74,7 +75,20 @@ const DocumentCarousel = () => {
 
   return (
     <div className="carousel-container">
-      <h1 className="carousel-heading">Achievements & Certificates</h1>
+      <Typography
+        variant="h1"
+        component="h1"
+        className="carousel-heading"
+        sx={{
+          fontFamily: '"Playfair Display", serif',
+          textAlign: 'center',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        Achievements & Certificates
+      </Typography>
       <div className="carousel-track">
         <div className="slide-wrapper prev">
           <img
