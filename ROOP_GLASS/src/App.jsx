@@ -1,15 +1,15 @@
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
-import { AppBar, Toolbar, Button, Container } from '@mui/material';
+import { Routes, Route } from 'react-router-dom';
+import { Container } from '@mui/material';
 import Home from './Components/Home';
 import './App.css';
 import Header from './Components/Header';
-import OurServices from './Components/OurServices'; // Corrected import
-import Footer from './Components/footer'; // Corrected import
+import OurServices from './Components/OurServices';
+import Footer from './Components/footer';
 import CallbackOverlay from './Components/overlay';
 import Projects from './Components/Projects';
 import DocumentCarousel from './Components/DocumentCarousel';
-import ENQ  from './Components/enq'; // Corrected import
+import ENQ from './Components/enq';
 
 function App() {
   return (
@@ -20,12 +20,24 @@ function App() {
           <Route path="/" element={
             <>
               <CallbackOverlay />
-              <Home />
-              <OurServices /> {/* Corrected component name */}
-              <Projects/>
-              <DocumentCarousel/>
-              <ENQ /> {/* Corrected component name */}
-              <Footer /> {/* Corrected component name */}
+              <div id="home">
+                <Home />
+              </div>
+              <div id="services">
+                <OurServices />
+              </div>
+              <div id="projects">
+                <Projects />
+              </div>
+              <div id="faqs">
+                <DocumentCarousel />
+              </div>
+              <div id="enquiry">
+                <ENQ />
+              </div>
+              <div id="contact">
+                <Footer />
+              </div>
             </>
           } />
         </Routes>

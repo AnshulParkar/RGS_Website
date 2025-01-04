@@ -1,14 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
 .hero-banner {
-    width: 99.45vw; /* Use viewport width instead of % */
+    width: 99.45vw;
+    /* Use viewport width instead of % */
     height: 100vh;
-    margin: 0; /* Remove any default margins */
-    padding: 0; /* Remove padding that might cause overflow */
+    margin: 0;
+    /* Remove any default margins */
+    padding: 0;
+    /* Remove padding that might cause overflow */
     position: relative;
-    left: 50%; /* Center the banner */
+    left: 50%;
+    /* Center the banner */
     right: 50%;
-    margin-left: -50vw; /* Negative margin to counteract the left position */
-    margin-right: -50vw; /* Negative margin to counteract the right position */
+    margin-left: -50vw;
+    /* Negative margin to counteract the left position */
+    margin-right: -50vw;
+    /* Negative margin to counteract the right position */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,7 +25,8 @@
     background-position: center;
     color: #fff;
     text-align: center;
-    box-sizing: border-box; /* Ensure padding is included in width calculation */
+    box-sizing: border-box;
+    /* Ensure padding is included in width calculation */
 }
 
 .hero-overlay {
@@ -32,8 +40,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%; /* Ensure overlay covers full width */
-    padding: 0 2rem; /* Move padding to overlay instead of banner */
+    width: 100%;
+    /* Ensure overlay covers full width */
+    padding: 0 2rem;
+    /* Move padding to overlay instead of banner */
     box-sizing: border-box;
     padding-bottom: 7rem;
 }
@@ -50,13 +60,13 @@
 .hero-title:hover {
     /* color: #000000; */
     text-shadow: 0 0 90px rgba(155, 155, 155, 0.8);
-    
+
     scale: 1.01;
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
-    margin-bottom: 2rem;    
+    margin-bottom: 2rem;
 }
 
 .cta-button {
