@@ -54,6 +54,14 @@
     border-radius: 4px;
 }
 
+.form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
 .form button {
     padding: 10px;
     background-color: #007bff;
