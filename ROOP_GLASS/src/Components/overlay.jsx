@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { X } from 'lucide-react';
 import './overlay.css';
 
-const CallbackOverlay = () => {
-    const [isOpen, setIsOpen] = useState(true);
+const CallbackOverlay = ({ isOpen, onClose }) => {
+    // const [isOpen, setIsOpen] = useState(true);
+    if(!isOpen) return null;
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -14,13 +15,13 @@ const CallbackOverlay = () => {
     //     alert('Google Sign-in clicked! Implement your OAuth logic here.');
     // };
 
-    if (!isOpen) return null;
+    // if (!isOpen) return null;
 
     return (
         <div className="overlay">
             <div className="overlay-content">
                 <button 
-                    onClick={() => setIsOpen(false)}
+                    onClick={onClose}
                     className="close-button"
                 >
                     <X size={22} />

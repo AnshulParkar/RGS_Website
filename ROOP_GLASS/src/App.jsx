@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef , useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Container } from '@mui/material';
 import Home from './Components/Home';
@@ -12,6 +12,17 @@ import DocumentCarousel from './Components/DocumentCarousel';
 import ENQ from './Components/enq';
 
 function App() {
+  const [isOverlayOpen, setIsOverlayOpen] = React.useState(false);
+  const footerRef = useRef(null);
+
+  const handleEnquiryClick = () => {
+    setIsOverlayOpen(true);
+  };
+
+  const handleContactUsClick = () => {
+    footerRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <>
       <Header />
@@ -19,9 +30,9 @@ function App() {
         <Routes>
           <Route path="/" element={
             <>
-              <CallbackOverlay />
+              <CallbackOverlay isOpen={isOverlayOpen} onClose={() => setIsOverlayOpen(false)}/>
               <div id="home">
-                <Home />
+                <Home onContactUsClick={handleContactUsClick}/>
               </div>
               <div id="services">
                 <OurServices />
@@ -33,10 +44,10 @@ function App() {
                 <DocumentCarousel />
               </div>
               <div id="enquiry">
-                <ENQ />
+                <ENQ onEnquiryClick={handleEnquiryClick}/>
               </div>
               <div id="contact">
-                <Footer />
+                <Footer ref={footerRef}/>
               </div>
             </>
           } />

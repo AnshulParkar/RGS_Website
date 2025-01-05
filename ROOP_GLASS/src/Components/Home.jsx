@@ -1,11 +1,13 @@
-import './Home.css'; // Add a CSS file for styling
-function Home() {
+import React from 'react';
+import './Home.css';
+
+function Home({ onContactUsClick }) {
   return (
     <>
       <div className="hero-banner">
         <div className="hero-overlay">
           <h1 className="hero-title">Contractors and Engineers for Facade and Roofing Works</h1>
-          <button className="cta-button">Contact Us</button>
+          <button className="cta-button" onClick={onContactUsClick}>Contact Us</button>
         </div>
       </div>
     </>
