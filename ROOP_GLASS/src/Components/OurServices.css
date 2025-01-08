@@ -54,3 +54,49 @@
   margin-top: 2rem;
   font-size: 2rem;
 }
+
+@media (max-width: 768px) {
+  .services-title {
+    font-size: 2rem !important;
+    margin-bottom: 2rem;
+  }
+
+  .service-box {
+    padding: 10px;
+  }
+
+  .service-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .service-title {
+    font-size: 1rem !important;
+  }
+
+  .services-ending {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-title {
+    font-size: 1.5rem !important;
+    margin-bottom: 1rem;
+  }
+
+  .service-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .service-title {
+    font-size: 0.9rem !important;
+  }
+
+  .services-ending {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+  }
+}

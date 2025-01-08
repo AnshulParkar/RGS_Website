@@ -201,4 +201,35 @@
     color: white;
     font-size: 24px;
   }
+
+  @media (max-width: 480px) {
+    .carousel-container {
+      height: 300px;
+    }
+
+    .slide-wrapper.current {
+      flex: 0 0 100%;
+    }
+
+    .carousel-track {
+      padding: 0 10px;
+    }
+
+    .nav-button {
+      width: 30px;
+      height: 30px;
+    }
+
+    .nav-button.prev {
+      left: 10px;
+    }
+
+    .nav-button.next {
+      right: 10px;
+    }
+
+    .carousel-heading {
+      font-size: 2rem;
+    }
+  }
   

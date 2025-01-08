@@ -96,3 +96,73 @@
     box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.15), 
                 0 15px 15px -5px rgba(0, 0, 0, 0.1);
 }
+/* Additional media queries for better responsiveness */
+@media (max-width: 1024px) {
+    .header {
+        font-size: 2.5rem;
+    }
+
+    .contactText {
+        font-size: 1.3rem;
+    }
+
+    .icon {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        font-size: 2rem;
+    }
+
+    .contactText {
+        font-size: 1.2rem;
+    }
+
+    .icon {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+
+    .cardContainer {
+        width: 100%;
+    }
+
+    .cardImage {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        font-size: 1.5rem;
+    }
+
+    .contactText {
+        font-size: 1rem;
+    }
+
+    .icon {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .contactContainer {
+        padding: 0.5rem 0rem;
+    }
+
+    .contentWrapper {
+        gap: 1rem;
+    }
+
+    .contactInfo {
+        gap: 1.5rem;
+    }
+
+    .contactItem {
+        gap: 1rem;
+    }
+}

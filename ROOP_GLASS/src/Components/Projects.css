@@ -305,3 +305,41 @@
     opacity: 0;
     transition: opacity 300ms ease-out;
 }
+
+/* Additional responsive styles for smaller screens */
+@media (max-width: 480px) {
+    .projects-container {
+        padding: 1rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .project-thumbnail {
+        height: 200px;
+    }
+
+    .modal-content {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .modal-nav-button {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .modal-details {
+        padding: 0.5rem;
+    }
+
+    .modal-details h3 {
+        font-size: 1rem;
+    }
+
+    .modal-details p {
+        font-size: 0.875rem;
+    }
+}
