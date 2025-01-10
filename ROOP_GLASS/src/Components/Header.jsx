@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import './Header.css'; // Import CSS for styling
 import logo from '../assets/logo.png'; // Import the logo image
+import { FaTimes, FaBars } from 'react-icons/fa'; // Import icons from react-icons
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState('home'); // State to track active link
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to track menu open/close
 
   const reloadPage = () => {
     window.location.reload(); // Reloads the page when the logo is clicked
@@ -17,15 +19,25 @@ const Header = () => {
     }
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen); // Toggle the menu open/close state
+  };
+
+  const handleCloseMenu = () => {
+    setIsMenuOpen(false); // Close the menu
+  };
   return (
-    <header className="navbar">
+    <header className={`navbar ${isMenuOpen ? 'sticky' : ''}`}>
       <div className="logo" onClick={reloadPage} style={{ cursor: 'pointer' }}>
         <img src={logo} alt="Logo" className="logo-image" />
       </div>
       <div className="Cname">
         <h1>Roop Glass Solutions</h1>
       </div>
-      <nav className="nav-links">
+      <button className="menu-toggle" onClick={toggleMenu}>
+        {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+      </button>
+      <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
         <ul>
           <li className={activeLink === 'home' ? 'active' : ''}>
             <a onClick={() => handleScroll('home')} href="#home">Home</a>
