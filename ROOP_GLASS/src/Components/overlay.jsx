@@ -3,8 +3,20 @@ import { X } from 'lucide-react';
 import './overlay.css';
 
 const CallbackOverlay = ({ isOpen, onClose }) => {
-    // const [isOpen, setIsOpen] = useState(true);
-    if(!isOpen) return null;
+    const [isOverlayOpen, setIsOverlayOpen] = useState(true);
+
+    // useEffect(() => {
+    //     if (isOpen) {
+    //         document.body.style.overflow = 'hidden';
+    //     } else {
+    //         document.body.style.overflow = 'auto';
+    //     }
+
+    //     return () => {
+    //         document.body.style.overflow = 'auto';
+    //     };
+    // }, [isOverlayOpen]);
+    if(!isOverlayOpen) return null;
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -21,7 +33,10 @@ const CallbackOverlay = ({ isOpen, onClose }) => {
         <div className="overlay">
             <div className="overlay-content">
                 <button 
-                    onClick={onClose}
+                    onClick={() => {
+                        setIsOverlayOpen(false);
+                        onClose();
+                    }}
                     className="close-button"
                 >
                     <X size={22} />
