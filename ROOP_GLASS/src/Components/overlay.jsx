@@ -18,7 +18,7 @@ const CallbackOverlay = ({ isOpen, onClose }) => {
     // }, [isOverlayOpen]);
     if(!isOverlayOpen) return null;
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         alert('Form submitted! This is where you would handle the callback request.');
     };
@@ -29,6 +29,25 @@ const CallbackOverlay = ({ isOpen, onClose }) => {
 
     // if (!isOpen) return null;
 
+    try {
+        const response = await fetch('http://localhost:173/roopglass', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name, phone })
+        });
+
+        if (response.ok) {
+            alert('Form submitted successfully!');
+            onClose();
+        } else {
+            alert('Failed to submit form');
+        }
+    } catch (error) {
+        alert('Error submitting form');
+    }
+};
     return (
         <div className="overlay">
             <div className="overlay-content">
