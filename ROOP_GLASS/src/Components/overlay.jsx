@@ -18,10 +18,10 @@ const CallbackOverlay = ({ isOpen, onClose }) => {
     // }, [isOverlayOpen]);
     if(!isOverlayOpen) return null;
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        alert('Form submitted! This is where you would handle the callback request.');
-    };
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     alert('Form submitted! This is where you would handle the callback request.');
+    // };
 
     // const handleGoogleSignIn = () => {
     //     alert('Google Sign-in clicked! Implement your OAuth logic here.');
@@ -29,20 +29,48 @@ const CallbackOverlay = ({ isOpen, onClose }) => {
 
     // if (!isOpen) return null;
 
+    // try {
+    //     const response = await fetch('http://localhost:173/roopglass', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({ name, phone })
+    //     });
+
+    //     if (response.ok) {
+    //         alert('Form submitted successfully!');
+    //         onClose();
+    //     } else {
+    //         alert('Failed to submit form');
+    //     }
+    // } catch (error) {
+    //     alert('Error submitting form');
+    // }
+// };
+const handleSubmit = async (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const phone = e.target.phone.value;
+    const message = e.target.message.value;
+
     try {
-        const response = await fetch('http://localhost:173/roopglass', {
+        const response = await fetch('http://localhost/handleCallback.php', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/x-www-form-urlencoded'
             },
-            body: JSON.stringify({ name, phone })
+            body: new URLSearchParams({
+                name: name,
+                phone: phone,
+                message: message
+            })
         });
 
+        const result = await response.text();
+        alert(result);
         if (response.ok) {
-            alert('Form submitted successfully!');
             onClose();
-        } else {
-            alert('Failed to submit form');
         }
     } catch (error) {
         alert('Error submitting form');
@@ -67,6 +95,7 @@ const CallbackOverlay = ({ isOpen, onClose }) => {
                     <form onSubmit={handleSubmit} className="form">
                         <input
                             type="text"
+                            name="name"
                             placeholder="Enter Your Name"
                             className="input"
                             required
@@ -74,11 +103,13 @@ const CallbackOverlay = ({ isOpen, onClose }) => {
                         
                         <input
                             type="tel"
+                            name="phone"
                             placeholder="Enter Mobile Number"
                             className="input"
                             required
                         />
                         <textarea
+                            name="message"
                             placeholder="Enter Your Message"
                             className="input"
                         ></textarea>
