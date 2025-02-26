@@ -1,8 +1,7 @@
-import React, { useRef , useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Container } from '@mui/material';
 import Home from './Components/Home';
-import './App.css';
 import Header from './Components/Header';
 import OurServices from './Components/OurServices';
 import Footer from './Components/footer';
@@ -11,9 +10,8 @@ import Projects from './Components/Projects';
 import DocumentCarousel from './Components/DocumentCarousel';
 import ENQ from './Components/enq';
 
-
 function App() {
-  const [isOverlayOpen, setIsOverlayOpen] = React.useState(false);
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
   const footerRef = useRef(null);
 
   const handleEnquiryClick = () => {
@@ -29,29 +27,44 @@ function App() {
       <Header />
       <Container>
         <Routes>
-          <Route path="/" element={
-            <>
-              <CallbackOverlay isOpen={isOverlayOpen} onClose={() => setIsOverlayOpen(false)}/>
-              <div id="home">
-                <Home onContactUsClick={handleContactUsClick}/>
-              </div>
-              <div id="services">
-                <OurServices />
-              </div>
-              <div id="projects">
-                <Projects />
-              </div>
-              <div id="faqs">
-                <DocumentCarousel />
-              </div>
-              <div id="enquiry">
-                <ENQ onEnquiryClick={handleEnquiryClick}/>
-              </div>
-              <div id="contact">
-                <Footer ref={footerRef}/>
-              </div>
-            </>
-          } />
+          <Route
+            path="/"
+            element={
+              <>
+                <CallbackOverlay isOpen={isOverlayOpen} onClose={() => setIsOverlayOpen(false)} />
+
+                {/* Home Section */}
+                <div id="home">
+                  <Home onContactUsClick={handleContactUsClick} />
+                </div>
+
+                {/* Services Section */}
+                <div id="services">
+                  <OurServices />
+                </div>
+
+                {/* Projects Section */}
+                <div id="projects">
+                  <Projects />
+                </div>
+
+                {/* FAQs Section */}
+                <div id="faqs">
+                  <DocumentCarousel />
+                </div>
+
+                {/* Enquiry Section */}
+                <div id="enquiry">
+                  <ENQ onEnquiryClick={handleEnquiryClick} />
+                </div>
+
+                {/* Contact Section */}
+                <div id="contact">
+                  <Footer ref={footerRef} />
+                </div>
+              </>
+            }
+          />
         </Routes>
       </Container>
     </>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Typography, Grid as MuiGrid, Container } from '@mui/material';
-import './OurServices.css';
 import AluminiumCladding from '../assets/Aluminium_Cladding.png';
 import CurtainWall from '../assets/CurtainWall.png';
 import DryStone from '../assets/DryStone_Cladding.png';
@@ -12,77 +11,47 @@ import PolycarbonateRoofing from '../assets/Polycarbonate_Roofing.png';
 import StructuralGlazing from '../assets/Structural_Glazing.png';
 
 const serviceData = [
-  {
-    image: StructuralGlazing,
-    title: 'Structural Glazing',
-    description: 'Advanced structural glazing for modern architectural projects'
-  },
-  {
-    image: AluminiumCladding,
-    title: 'Aluminium Cladding',
-    description: 'Premium aluminum cladding solutions for modern architectural designs'
-  },
-  {
-    image: FramelessGlazing,
-    title: 'Frameless Glazing',
-    description: 'Sleek frameless glazing systems for contemporary spaces'
-  },
-  {
-    image: PolycarbonateRoofing,
-    title: 'Polycarbonate Roofing',
-    description: 'Lightweight and versatile polycarbonate roofing systems'
-  },
-  {
-    image: GlassRoofing,
-    title: 'Glass Roofing',
-    description: 'Innovative glass roofing solutions for natural lighting'
-  },
-  {
-    image: MetalRoofing,
-    title: 'Metal Roofing',
-    description: 'Durable and aesthetic metal roofing systems'
-  },
-  {
-    image: DryStone,
-    title: 'Dry Stone Cladding',
-    description: 'Natural stone cladding solutions for authentic and durable facades'
-  },
-  {
-    image: MSSSFrameWorks,
-    title: 'MS & SS Frame Works',
-    description: 'Custom mild steel and stainless steel framework solutions'
-  },
-  {
-    image: CurtainWall,
-    title: 'Curtain Wall System',
-    description: 'Elegant curtain wall systems for commercial and residential buildings'
-  }
+  { image: StructuralGlazing, title: 'Structural Glazing', description: 'Advanced structural glazing for modern projects' },
+  { image: AluminiumCladding, title: 'Aluminium Cladding', description: 'Premium aluminum cladding for architectural designs' },
+  { image: FramelessGlazing, title: 'Frameless Glazing', description: 'Sleek frameless glazing systems for contemporary spaces' },
+  { image: PolycarbonateRoofing, title: 'Polycarbonate Roofing', description: 'Lightweight and versatile roofing systems' },
+  { image: GlassRoofing, title: 'Glass Roofing', description: 'Innovative glass roofing solutions for natural lighting' },
+  { image: MetalRoofing, title: 'Metal Roofing', description: 'Durable and aesthetic metal roofing systems' },
+  { image: DryStone, title: 'Dry Stone Cladding', description: 'Natural stone cladding for durable facades' },
+  { image: MSSSFrameWorks, title: 'MS & SS Frame Works', description: 'Custom mild steel and stainless steel frameworks' },
+  { image: CurtainWall, title: 'Curtain Wall System', description: 'Elegant curtain wall systems for buildings' }
 ];
 
 const OurServices = () => {
   return (
-    <div className="services-section">
-      <Container maxWidth="xl">
+    <div className="py-5 bg-light">
+      <Container maxWidth="xl" className="text-center">
         <Typography 
           variant="h2" 
           component="h2" 
-          className="services-title"
-          sx={{ fontFamily: '"Playfair Display", serif' }}
+          className="fw-bold mb-4 text-dark"
+          style={{ fontFamily: '"Playfair Display", serif', fontSize: '2.5rem' }}
         >
           Our Services
         </Typography>
-        <MuiGrid container spacing={8}>
+        
+        {/* Service Grid */}
+        <MuiGrid container spacing={4} className="justify-content-center">
           {serviceData.map((service, index) => (
             <MuiGrid item xs={12} sm={6} md={4} key={index}>
-              <div className="service-box">
-                <div className="image-container">
-                  <img src={service.image} alt={service.title} className="service-image" />
+              <div className="d-flex flex-column align-items-center text-center p-3 border rounded shadow-sm bg-white h-100">
+                <div className="w-100 d-flex justify-content-center mb-3">
+                  <img 
+                    src={service.image} 
+                    alt={service.title} 
+                    className="img-fluid rounded border"
+                    style={{ maxWidth: '250px', height: 'auto' }}
+                  />
                 </div>
                 <Typography 
                   variant="h6" 
-                  component="h3" 
-                  align="center" 
-                  className="service-title"
+                  className="fw-semibold text-dark"
+                  style={{ fontSize: '1.2rem' }}
                 >
                   {service.title}
                 </Typography>
@@ -90,8 +59,12 @@ const OurServices = () => {
             </MuiGrid>
           ))}
         </MuiGrid>
+
+        {/* Bottom Text */}
+        <h2 className="mt-5 text-dark fw-bold">
+          We provide Both Unitized and Semi-Unitized Systems
+        </h2>
       </Container>
-      <h2 className="services-ending">We provide Both Unitized and Semi unitized System</h2>
     </div>
   );
 };

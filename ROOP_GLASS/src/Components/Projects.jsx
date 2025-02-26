@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import './Projects.css';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Typography, Grid as MuiGrid, Container } from '@mui/material';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Import images
 import img1 from '../assets/AmanoraMallPune.png';
@@ -47,81 +46,47 @@ const Projects = () => {
     setCurrentIndex(index);
   };
 
-  const closeModal = () => {
-    setSelectedImg(null);
-  };
+  const closeModal = () => setSelectedImg(null);
 
   const navigate = (direction) => {
-    const newIndex = direction === 'next'
-      ? (currentIndex + 1) % projects.length
-      : (currentIndex - 1 + projects.length) % projects.length;
+    const newIndex = direction === 'next' ? (currentIndex + 1) % projects.length : (currentIndex - 1 + projects.length) % projects.length;
     setCurrentIndex(newIndex);
     setSelectedImg(projects[newIndex]);
   };
 
   return (
-    <div className="projects-container">
-      <Typography
-        variant="h1"
-        component="h1"
-        className="projects-title"
-        sx={{
-          fontFamily: '"Playfair Display", serif',
-          textAlign: 'center',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        Our Projects
-      </Typography>
-
-      <div className="projects-grid">
+    <div className="container py-5">
+      <h1 className="text-center mb-4">Our Projects</h1>
+      <div className="row g-4">
         {projects.map((project, index) => (
-          <div
-            key={project.id}
-            className="project-card"
-            onClick={() => openModal(index)}
-          >
-            <img src={project.img} alt={project.title} className="project-thumbnail" />
-            <div className="project-overlay">
-              <h3 className="project-name">{project.title}</h3>
+          <div key={project.id} className="col-md-4" onClick={() => openModal(index)}>
+            <div className="card shadow-sm border-0 overflow-hidden">
+              <img src={project.img} alt={project.title} className="card-img-top" style={{ height: '250px', objectFit: 'cover' }} />
+              <div className="card-body text-center bg-dark text-light">
+                <h5 className="card-title mb-0">{project.title}</h5>
+              </div>
             </div>
           </div>
         ))}
       </div>
 
       {selectedImg && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={e => e.stopPropagation()}>
-            <button className="modal-close-button" onClick={closeModal}>
-              <X /> {/* Using Lucide-react X icon */}
-            </button>
-            <div className="modal-image-container">
-              <img src={selectedImg.img} alt={selectedImg.title} className="modal-image" />
+        <div className="modal d-flex align-items-center justify-content-center show" style={{ backgroundColor: 'rgba(0,0,0,0.8)', position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: 1050 }} onClick={closeModal}>
+          <div className="modal-dialog modal-lg" onClick={e => e.stopPropagation()}>
+            <div className="modal-content">
+              <div className="modal-header bg-dark text-light">
+                <h5 className="modal-title">{selectedImg.title}</h5>
+                <button className="btn-close btn-close-white" onClick={closeModal}></button>
+              </div>
+              <div className="modal-body text-center">
+                <img src={selectedImg.img} alt={selectedImg.title} className="img-fluid" />
+                <p className="mt-3">{selectedImg.description}</p>
+              </div>
+              <div className="modal-footer justify-content-between">
+                <button className="btn btn-outline-dark" onClick={() => navigate('prev')}><ChevronLeft /></button>
+                <button className="btn btn-outline-dark" onClick={() => navigate('next')}><ChevronRight /></button>
+              </div>
             </div>
-            <div className="modal-info">
-              <h3>{selectedImg.title}</h3>
-              <p>{selectedImg.description}</p>
-            </div>
-            <button
-              className="modal-nav-button prev"
-              onClick={(e) => {
-                e.stopPropagation();
-                navigate('prev');
-              }}
-            >
-              <ChevronLeft />
-            </button>
-            <button
-              className="modal-nav-button next"
-              onClick={(e) => {
-                e.stopPropagation();
-                navigate('next');
-              }}
-            >
-              <ChevronRight />
-            </button>
           </div>
         </div>
       )}

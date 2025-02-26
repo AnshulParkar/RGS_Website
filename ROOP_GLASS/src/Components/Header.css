@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-/* General Reset */
+/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
 body, ul, li, a {
     margin: 0;
     padding: 0;
@@ -8,7 +8,7 @@ body, ul, li, a {
     box-sizing: border-box;
 }
   
-/* Header Styles */
+
 .navbar {
     position: sticky;
     top: 0;
@@ -16,7 +16,7 @@ body, ul, li, a {
     align-items: center;
     width: 100%;
     height: 3rem;
-    background-color: rgba(1, 21, 44, 0.9); /* Navy with transparency for blur effect */
+    background-color: rgba(1, 21, 44, 0.9); 
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     z-index: 1000;
@@ -24,14 +24,12 @@ body, ul, li, a {
           
 }
 
-  
-/* Logo Styles */
 .logo {
-    flex: 0 0 auto; /* Prevents the logo from stretching */
+    flex: 0 0 auto; 
 }
 
 .logo-image {
-    width: auto; /* Adjust the size of your logo */
+    width: auto; 
     height: 86px;
     display: block;
     margin-top:4px ;
@@ -40,28 +38,26 @@ body, ul, li, a {
  
 
 .Cname{
-    color: #ffffff; /* Gold color for company name */
+    color: #ffffff; 
     font-family: 'Playfair Display';
     font-size: 1rem;
     font-weight: 500;
-    /* text-transform: uppercase; */
-    margin-left: 0rem; /* Adjust the margin as needed */
+    margin-left: 0rem; 
     padding-bottom: 4px;
     margin-bottom: 0.27rem;
 }
 
 .Cname:hover {
-    color: #ffffff; /* Gold color for company name */
-    /* scale: 1.1; */
-    text-shadow: 0 0 30px #0331c6;  /* Gold color for company name */
+    color: #ffffff; 
+    text-shadow: 0 0 30px #0331c6; 
 }
 
-/* Navbar Links */
+
 .nav-links {
-    flex: 1; /* Takes up the remaining space */
+    flex: 1; 
     display: flex;
-    justify-content:end; /* Aligns the links to the right */
-    margin-right:1.5rem ; /* Adjust the margin as needed */
+    justify-content:end; 
+    margin-right:1.5rem ; 
 }
 
 .nav-links ul {
@@ -74,7 +70,7 @@ body, ul, li, a {
 }
 
 .nav-links ul li a {
-    color: #FFC857; /* Gold color for links */
+    color: #FFC857; 
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     font-weight: 500;
@@ -83,18 +79,17 @@ body, ul, li, a {
 }
 
 .nav-links ul li a:hover {
-    color: #F1FAEE; /* Soft white on hover */
+    color: #F1FAEE;
 }
 
-/* Active Link Box */
 .nav-links ul li.active a {
-    border: 2px solid #FFC857; /* Gold border for active link */
-    color: #FFC857; /* Gold text */
+    border: 2px solid #FFC857; 
+    color: #FFC857; 
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    background-color: transparent; /* No fill */
+    background-color: transparent; 
 }
-/* Responsive Styles */
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -162,4 +157,4 @@ body, ul, li, a {
     .menu-toggle {
       display: block;
     }
-  }  
+  }   */

@@ -1,4 +1,4 @@
-.services-section {
+/* .services-section {
   padding: 10px 0;
   padding-top: 3rem;
 
@@ -44,7 +44,7 @@
 }
 
 .service-description {
-  display: none; /* Removed as per reference image */
+  display: none; 
 }
 
 .services-ending{
@@ -99,4 +99,4 @@
     font-size: 1.2rem;
     margin-top: 0.5rem;
   }
-}
+} */

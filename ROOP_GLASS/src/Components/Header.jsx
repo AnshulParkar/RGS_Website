@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './Header.css'; // Import CSS for styling
 import logo from '../assets/logo.png'; // Import the logo image
 import { FaTimes, FaBars } from 'react-icons/fa'; // Import icons from react-icons
 
@@ -23,42 +22,68 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen); // Toggle the menu open/close state
   };
 
-  const handleCloseMenu = () => {
-    setIsMenuOpen(false); // Close the menu
-  };
   return (
-    <header className={`navbar ${isMenuOpen ? 'sticky' : ''}`}>
-      <div className="logo" onClick={reloadPage} style={{ cursor: 'pointer' }}>
-        <img src={logo} alt="Logo" className="logo-image" />
+    <header
+      className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top px-3"
+      style={{ backdropFilter: 'blur(10px)', zIndex: 1000 }}
+    >
+      <div className="container-fluid d-flex align-items-center justify-content-between">
+        {/* Logo Section */}
+        <div
+          onClick={reloadPage}
+          style={{ cursor: 'pointer' }}
+          className="d-flex align-items-center"
+        >
+          <img
+            src={logo}
+            alt="Logo"
+            style={{ height: '70px', width: 'auto' }}
+            className="img-fluid"
+          />
+        </div>
+
+        {/* Company Name - Always Visible */}
+        <h1 className="text-white fw-bold fs-5 m-0 text-center flex-grow-1">
+          Roop Glass Solutions
+        </h1>
+
+        {/* Toggle Button for Mobile */}
+        <button
+          className="navbar-toggler border-0 text-warning"
+          type="button"
+          onClick={toggleMenu}
+        >
+          {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+        </button>
+
+        {/* Navigation Menu */}
+        <div
+          className={`collapse navbar-collapse justify-content-end ${isMenuOpen ? 'show' : ''}`}
+        >
+          <ul className="navbar-nav gap-3">
+            {[
+              { id: 'home', label: 'Home' },
+              { id: 'services', label: 'Our Services' },
+              { id: 'projects', label: 'Projects' },
+              { id: 'faqs', label: 'Certificates' },
+              { id: 'enquiry', label: 'Enquiry' },
+              { id: 'contact', label: 'Contact Us' },
+            ].map((item) => (
+              <li className="nav-item" key={item.id}>
+                <a
+                  onClick={() => handleScroll(item.id)}
+                  href={`#${item.id}`}
+                  className={`nav-link text-uppercase fw-medium ${
+                    activeLink === item.id ? 'active border border-warning px-3 rounded' : 'text-warning'
+                  }`}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-      <div className="Cname">
-        <h1>Roop Glass Solutions</h1>
-      </div>
-      <button className="menu-toggle" onClick={toggleMenu}>
-        {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-      </button>
-      <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-        <ul>
-          <li className={activeLink === 'home' ? 'active' : ''}>
-            <a onClick={() => handleScroll('home')} href="#home">Home</a>
-          </li>
-          <li className={activeLink === 'services' ? 'active' : ''}>
-            <a onClick={() => handleScroll('services')} href="#services">Our Services</a>
-          </li>
-          <li className={activeLink === 'projects' ? 'active' : ''}>
-            <a onClick={() => handleScroll('projects')} href="#projects">Projects</a>
-          </li>
-          <li className={activeLink === 'faqs' ? 'active' : ''}>
-            <a onClick={() => handleScroll('faqs')} href="#faqs">Certificates</a>
-          </li>
-          <li className={activeLink === 'enquiry' ? 'active' : ''}>
-            <a onClick={() => handleScroll('enquiry')} href="#enquiry">Enquiry</a>
-          </li>
-          <li className={activeLink === 'contact' ? 'active' : ''}>
-            <a onClick={() => handleScroll('contact')} href="#contact">Contact Us</a>
-          </li>
-        </ul>
-      </nav>
     </header>
   );
 };
